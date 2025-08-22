@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "br.com.adautomoises"
-version = "0.2.0"
+version = "0.3.0"
 description = "Serviço de Gerenciamento de Perfis do GitHub"
 
 java {
