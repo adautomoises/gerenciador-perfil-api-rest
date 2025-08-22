@@ -1,5 +1,6 @@
 package br.com.adautomoises.gerenciador_perfil.Service
 
+import br.com.adautomoises.gerenciador_perfil.Exception.logger
 import br.com.adautomoises.gerenciador_perfil.model.Entity.AuthUser
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
@@ -41,7 +42,8 @@ class TokenService(
             val decodedJWT = verifier.verify(token)
             return decodedJWT.subject
         } catch (exception: JWTVerificationException) {
-            return null
+            logger.error("Token invalid or expired", exception)
+            throw JWTVerificationException("Token invalid or expired", exception)
         }
     }
 
