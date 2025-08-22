@@ -6,7 +6,7 @@ import br.com.adautomoises.gerenciador_perfil.model.Entity.Role
 
 object RoleMapper {
     fun toEntity(dto: RoleRequest): Role {
-        return Role(name = dto.name)
+        return Role(name = dto.name.uppercase())
     }
 
     fun toResponse(entity: Role): RoleResponse {

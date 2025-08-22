@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "br.com.adautomoises"
-version = "0.3.0"
+version = "1.0.0"
 description = "Serviço de Gerenciamento de Perfis do GitHub"
 
 java {
@@ -30,6 +30,7 @@ dependencies {
 	implementation("org.flywaydb:flyway-database-postgresql")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("com.squareup.okhttp3:okhttp:3.10.0")
+	implementation("com.auth0:java-jwt:4.4.0")
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.mockk:mockk:1.13.11")
