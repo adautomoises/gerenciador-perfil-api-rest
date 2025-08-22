@@ -2,6 +2,7 @@ package br.com.adautomoises.gerenciador_perfil.Controller
 
 import br.com.adautomoises.gerenciador_perfil.Service.UserService
 import br.com.adautomoises.gerenciador_perfil.model.DTO.UserResponse
+import br.com.adautomoises.gerenciador_perfil.model.DTO.UserWithRolesResponse
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -20,5 +21,10 @@ class UserController(private val userService: UserService) {
     @GetMapping
     private fun listUsers(): ResponseEntity<List<UserResponse>> {
         return ResponseEntity.ok(userService.listUsers())
+    }
+
+    @GetMapping("/roles")
+    private fun listUsersWithRoles(): ResponseEntity<List<UserWithRolesResponse>> {
+        return ResponseEntity.ok(userService.listUsersWithRoles())
     }
 }

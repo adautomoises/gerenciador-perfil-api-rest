@@ -1,5 +1,6 @@
 package br.com.adautomoises.gerenciador_perfil.model.Entity
 
+import com.fasterxml.jackson.annotation.JsonBackReference
 import jakarta.persistence.*
 
 @Entity
@@ -10,6 +11,7 @@ data class Role(
     val id: Long = 0,
     @Column(nullable = false, unique = true)
     val name: String,
+    @JsonBackReference
     @ManyToMany(mappedBy = "roles")
     val users: MutableSet<User> = mutableSetOf()
 ) {

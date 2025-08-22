@@ -2,6 +2,7 @@ package br.com.adautomoises.gerenciador_perfil.mapper
 
 import br.com.adautomoises.gerenciador_perfil.model.DTO.UserRequest
 import br.com.adautomoises.gerenciador_perfil.model.DTO.UserResponse
+import br.com.adautomoises.gerenciador_perfil.model.DTO.UserWithRolesResponse
 import br.com.adautomoises.gerenciador_perfil.model.Entity.User
 
 object UserMapper {
@@ -19,5 +20,9 @@ object UserMapper {
 
     fun toResponse(entities: List<User>): List<UserResponse> {
         return entities.map { UserResponse(id = it.id, login = it.login, url = it.url) }
+    }
+
+    fun toResponseWithRoles(dto: User): UserWithRolesResponse {
+        return UserWithRolesResponse(id = dto.id, login = dto.login, url = dto.url, roles = dto.roles)
     }
 }
