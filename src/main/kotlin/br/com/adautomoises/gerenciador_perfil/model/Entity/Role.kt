@@ -12,4 +12,19 @@ data class Role(
     val name: String,
     @ManyToMany(mappedBy = "roles")
     val users: MutableSet<User> = mutableSetOf()
-)
+) {
+    override fun toString(): String {
+        return "Role(id=$id, name='$name')"
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+        other as Role
+        return id == other.id
+    }
+
+    override fun hashCode(): Int {
+        return id.hashCode()
+    }
+}
