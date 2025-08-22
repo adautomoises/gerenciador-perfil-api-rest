@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "br.com.adautomoises"
-version = "0.1.0"
+version = "0.2.0"
 description = "Serviço de Gerenciamento de Perfis do GitHub"
 
 java {
@@ -32,9 +32,9 @@ dependencies {
 	implementation("com.squareup.okhttp3:okhttp:3.10.0")
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+	testImplementation("io.mockk:mockk:1.13.11")
+	testImplementation("com.ninja-squad:springmockk:4.0.2")
 	testImplementation("org.springframework.security:spring-security-test")
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 kotlin {

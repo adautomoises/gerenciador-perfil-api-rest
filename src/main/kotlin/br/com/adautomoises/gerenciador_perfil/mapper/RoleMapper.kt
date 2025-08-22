@@ -12,4 +12,8 @@ object RoleMapper {
     fun toResponse(entity: Role): RoleResponse {
         return RoleResponse(id = entity.id, name = entity.name)
     }
+
+    fun toResponse(entities: List<Role>): List<RoleResponse> {
+        return entities.map { RoleResponse(id = it.id, name = it.name) }
+    }
 }

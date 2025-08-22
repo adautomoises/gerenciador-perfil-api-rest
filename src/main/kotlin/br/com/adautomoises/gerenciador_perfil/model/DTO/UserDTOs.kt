@@ -1,6 +1,5 @@
 package br.com.adautomoises.gerenciador_perfil.model.DTO
 
-import br.com.adautomoises.gerenciador_perfil.model.Entity.Role
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import jakarta.validation.constraints.NotBlank
 
@@ -22,5 +21,5 @@ data class UserWithRolesResponse(
     val id: Long,
     val login: String,
     val url: String,
-    val roles: Set<Role>
+    val roles: Set<RoleResponse>
 )

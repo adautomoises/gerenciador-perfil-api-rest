@@ -23,6 +23,8 @@ object UserMapper {
     }
 
     fun toResponseWithRoles(dto: User): UserWithRolesResponse {
-        return UserWithRolesResponse(id = dto.id, login = dto.login, url = dto.url, roles = dto.roles)
+        return UserWithRolesResponse(
+            id = dto.id, login = dto.login, url = dto.url, roles = RoleMapper.toResponse(dto.roles.toList()).toSet()
+        )
     }
 }
