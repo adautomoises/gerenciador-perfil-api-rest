@@ -5,9 +5,9 @@ import jakarta.validation.constraints.NotBlank
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class UserRequest(
-    @field:NotBlank(message = "O login não pode ser vazio")
+    @field:NotBlank(message = "Login should not be empty")
     val login: String,
-    @field:NotBlank(message = "O url não pode ser vazio")
+    @field:NotBlank(message = "Url should not be empty")
     val url: String
 )
 
